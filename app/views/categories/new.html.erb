@@ -1,0 +1,24 @@
+<%= render 'shared/content_title', title: "Add a new category" %>
+
+<% if @category.errors.any? %>
+  <div class='row'>
+    <div class='alert alert-error span8'>
+      <h5>Please fix the following <%= "error".pluralize(@category.errors.count) %>: </h5>
+      <ul>
+        <% @category.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div class='well'>
+  <%= form_for @category do |f| %>
+    <div class=''> 
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <%= f.submit 'Create Category', class: 'btn btn-primary' %>
+  <% end %>
+</div>
