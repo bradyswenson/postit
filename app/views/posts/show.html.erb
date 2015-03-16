@@ -25,7 +25,7 @@
   <div class='well span8'>
     <em>"<%= comment.body %>"</em>
     <span class='quiet'>by</span> <%= link_to comment.creator.username, '' %> 
-    <small>at <%= comment.created_at %></small>
+    <small>at <%= format_datetime(comment.created_at) %></small>
   </div>
 
 <% end %>

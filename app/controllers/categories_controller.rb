@@ -1,10 +1,10 @@
 class CategoriesController < ApplicationController
 
-  def index
-  end
+  def index; end
 
   def show 
     @category = Category.find(params[:id])
+    @posts = Category.where(id: params[:id]).posts
   end
 
   def new
@@ -22,11 +22,9 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
   private
 

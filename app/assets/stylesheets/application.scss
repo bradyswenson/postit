@@ -42,3 +42,13 @@ div.comment_votes {
   padding: 10px;
 }
 
+a.category.badge {
+  color: #ddd;
+}
+
+a.category.badge:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #aaa;
+}
+
