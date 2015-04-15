@@ -15,4 +15,17 @@ before_action :require_user
 
   end
 
+  def vote
+    comment = Comment.find(params[:id])
+    vote = Vote.create(voteable: comment, creator: current_user, vote: params[:vote])
+    
+    if vote.valid?
+      flash[:notice] = "Thanks for voting!"
+    else
+      flash[:error] = "You can only vote once, but we appreciate your enthusiasm!"
+    end
+
+    redirect_to :back
+  end
+
 end
