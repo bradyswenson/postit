@@ -1,3 +1,5 @@
 <%= render 'shared/content_title', title: "Category: #{@category.name}" %>
 
-<%= render 'shared/post_list' %>
+<% @posts.each do |post| %>
+  <%= render 'posts/post', post: post %>
+<% end %>
