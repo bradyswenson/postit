@@ -4,8 +4,8 @@ before_action :require_user, only: [:new, :create]
   def index; end
 
   def show 
-    @category = Category.find(params[:id])
-    @posts = Category.find(params[:id]).posts
+    @category = Category.find_by slug: params[:id]
+    @posts = Category.find_by(slug: params[:id]).posts
   end
 
   def new
