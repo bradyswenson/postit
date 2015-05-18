@@ -12,7 +12,7 @@
     <% Category.all.each do |category| %>
       <li><%= link_to category.name, category_path(category) %> 
     <% end %>
-    <% if logged_in? %>
+    <% if logged_in? and current_user.admin?  %>
       <li class='divider'></li>
       <li>
         <%= link_to(new_category_path) do %>
@@ -24,7 +24,7 @@
   </ul>
 </div>
 
-<% if logged_in? %>
+<% if logged_in?%>
 <div class='nav_item'>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
 </div>
