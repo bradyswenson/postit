@@ -1,10 +1,3 @@
-#the rails 4 way
-
-
-
-
-# old school meta programming
-=begin
 module Voteable
   def self.included(base)
     base.send(:include, InstanceMethods)
@@ -34,4 +27,3 @@ module Voteable
     end
   end
 end
-=end
